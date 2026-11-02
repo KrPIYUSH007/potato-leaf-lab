@@ -1,2 +1,2 @@
 # Preserve frozen manifest bytes (and its SHA-256) on every operating system.
-reports/**/manifest.csv -text
+reports/**/manifest.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
