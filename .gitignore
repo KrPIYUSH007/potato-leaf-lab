@@ -22,3 +22,7 @@ checkpoints/
 .streamlit/secrets.toml
 .DS_Store
 Thumbs.db
+
+# Local data inspection images
+reports/**/category_samples.jpg
+reports/**/near_duplicates_*.jpg

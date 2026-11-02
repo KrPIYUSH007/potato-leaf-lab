@@ -1,0 +1,403 @@
+{
+  "dataset_doi": "10.17632/ptz377bwb8.1",
+  "seed": 42,
+  "python": "3.12.14",
+  "packages": {
+    "Pillow": "13.0.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1"
+  },
+  "reported_counts": {
+    "bacteria": 569,
+    "fungi": 748,
+    "healthy": 201,
+    "nematode": 68,
+    "pest": 611,
+    "phytophthora": 347,
+    "virus": 532
+  },
+  "readable_counts": {
+    "bacteria": 569,
+    "fungi": 748,
+    "healthy": 201,
+    "nematode": 68,
+    "pest": 611,
+    "phytophthora": 347,
+    "virus": 532
+  },
+  "readable_total": 3076,
+  "retained_total": 3015,
+  "invalid": [],
+  "quarantined_label_conflicts": [
+    {
+      "path": "fungi/20230712_115043.jpg",
+      "label": "fungi",
+      "file_sha256": "876817d09363fed6dfa7e9d59ac4151e3807b588f711f6e667f95834d70926a1",
+      "pixel_sha256": "e5b125976daa5197a3bb7e058d6e8b97b0471e133965af15013603ed80ff5f4e",
+      "dhash": "8492c9c47eed3c5e",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "fungi/20230712_150155.jpg",
+      "label": "fungi",
+      "file_sha256": "db82b2d1f3c522a489246212f5cc38816c415450951dc06f332f8fff09a182a2",
+      "pixel_sha256": "9399dad6bbcb0c21f4a988b500f18571506099a1e9bec07e8e703eb12712ac64",
+      "dhash": "aaf1b1f439ea6b35",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "fungi/20230802_104926298.jpg",
+      "label": "fungi",
+      "file_sha256": "d3290e0c108f4f585bee63b02daacf8abf192b1e1672b8eddba7a24caa900487",
+      "pixel_sha256": "b88240d34f8b0e4c5e0582d891de389d328e436e14e360ee6a173dc5f3abe5b9",
+      "dhash": "2561284240c1dbcf",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "healthy/20230712_130852.jpg",
+      "label": "healthy",
+      "file_sha256": "4e678603b69834e572d6889dd8b6c79d72b824bbcbb59f7fd6fe22d3e9670f3f",
+      "pixel_sha256": "6ecfe60164079825bdd95323b30a39d5a02ec21e5552fdaefad1240cf46ac8e0",
+      "dhash": "e7fbdd99f1f8b933",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "nematode/20230712_122808.jpg",
+      "label": "nematode",
+      "file_sha256": "f30fd254ce7b7a75761197882988aaf90dff521efeb2ffbe95fdbb45cc76f986",
+      "pixel_sha256": "26d8e7f87c795cbb2896f9869ecee0cce01294025f88d24ec2194842d1333dd1",
+      "dhash": "1001c9c42e89e1a9",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "pest/20230712_115043.jpg",
+      "label": "pest",
+      "file_sha256": "876817d09363fed6dfa7e9d59ac4151e3807b588f711f6e667f95834d70926a1",
+      "pixel_sha256": "e5b125976daa5197a3bb7e058d6e8b97b0471e133965af15013603ed80ff5f4e",
+      "dhash": "8492c9c47eed3c5e",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "pest/20230712_122808.jpg",
+      "label": "pest",
+      "file_sha256": "f30fd254ce7b7a75761197882988aaf90dff521efeb2ffbe95fdbb45cc76f986",
+      "pixel_sha256": "26d8e7f87c795cbb2896f9869ecee0cce01294025f88d24ec2194842d1333dd1",
+      "dhash": "1001c9c42e89e1a9",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "pest/20230712_130852.jpg",
+      "label": "pest",
+      "file_sha256": "4e678603b69834e572d6889dd8b6c79d72b824bbcbb59f7fd6fe22d3e9670f3f",
+      "pixel_sha256": "6ecfe60164079825bdd95323b30a39d5a02ec21e5552fdaefad1240cf46ac8e0",
+      "dhash": "e7fbdd99f1f8b933",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "pest/20230712_150155.jpg",
+      "label": "pest",
+      "file_sha256": "db82b2d1f3c522a489246212f5cc38816c415450951dc06f332f8fff09a182a2",
+      "pixel_sha256": "9399dad6bbcb0c21f4a988b500f18571506099a1e9bec07e8e703eb12712ac64",
+      "dhash": "aaf1b1f439ea6b35",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "pest/20230802_104926298.jpg",
+      "label": "pest",
+      "file_sha256": "d3290e0c108f4f585bee63b02daacf8abf192b1e1672b8eddba7a24caa900487",
+      "pixel_sha256": "b88240d34f8b0e4c5e0582d891de389d328e436e14e360ee6a173dc5f3abe5b9",
+      "dhash": "2561284240c1dbcf",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "pest/IMG_20230816_115049~2.jpg",
+      "label": "pest",
+      "file_sha256": "1bddf338c236d74b16b23f4c6a26e66e6cf9c21684e83d82df432bd8ab68ab87",
+      "pixel_sha256": "986ad5992e777d64962751c7cd1ce211a50c27481455defdc3acbcadb742efb0",
+      "dhash": "ab33d393e09027e6",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    },
+    {
+      "path": "virus/IMG_20230816_115049~2.jpg",
+      "label": "virus",
+      "file_sha256": "1bddf338c236d74b16b23f4c6a26e66e6cf9c21684e83d82df432bd8ab68ab87",
+      "pixel_sha256": "986ad5992e777d64962751c7cd1ce211a50c27481455defdc3acbcadb742efb0",
+      "dhash": "ab33d393e09027e6",
+      "width": 1500,
+      "height": 1500,
+      "reason": "identical pixels assigned to multiple categories"
+    }
+  ],
+  "excluded_exact_duplicates": [
+    {
+      "path": "fungi/Copy of 20230712_154218.jpg",
+      "same_pixels_as": "fungi/20230712_154218.jpg"
+    },
+    {
+      "path": "fungi/IMG_20230815_112512~2.jpg",
+      "same_pixels_as": "fungi/IMG_20230815_112512~2 (2).jpg"
+    },
+    {
+      "path": "fungi/IMG_20230815_122340~2.jpg",
+      "same_pixels_as": "fungi/IMG_20230815_122340~2(1).jpg"
+    },
+    {
+      "path": "fungi/IMG_20230816_084638 (1).jpg",
+      "same_pixels_as": "fungi/IMG_20230816_084638 (1)(1).jpg"
+    },
+    {
+      "path": "fungi/IMG_20230816_122345~2.jpg",
+      "same_pixels_as": "fungi/IMG_20230816_122345~2 (2).jpg"
+    },
+    {
+      "path": "healthy/20230712_121645.jpg",
+      "same_pixels_as": "healthy/20230712_121645 (1).jpg"
+    },
+    {
+      "path": "pest/IMG_0123.JPG",
+      "same_pixels_as": "pest/IMG_0123 (1).JPG"
+    },
+    {
+      "path": "pest/IMG_0205.JPG",
+      "same_pixels_as": "pest/IMG_0205 (1).JPG"
+    },
+    {
+      "path": "pest/IMG_0208.JPG",
+      "same_pixels_as": "pest/IMG_0208 (1).JPG"
+    },
+    {
+      "path": "pest/IMG_0225.JPG",
+      "same_pixels_as": "pest/IMG_0225 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_0261 - Copy.JPG",
+      "same_pixels_as": "phytophthora/IMG_0261 - Copy (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_0390.JPG",
+      "same_pixels_as": "phytophthora/IMG_0390 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_4815.JPG",
+      "same_pixels_as": "phytophthora/IMG_4815 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9425.JPG",
+      "same_pixels_as": "phytophthora/IMG_9425 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9426.JPG",
+      "same_pixels_as": "phytophthora/IMG_9426 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9430.JPG",
+      "same_pixels_as": "phytophthora/IMG_9430 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9439.JPG",
+      "same_pixels_as": "phytophthora/IMG_9439 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9440.JPG",
+      "same_pixels_as": "phytophthora/IMG_9440 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9443.JPG",
+      "same_pixels_as": "phytophthora/IMG_9443 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9463.JPG",
+      "same_pixels_as": "phytophthora/IMG_9463 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9464.JPG",
+      "same_pixels_as": "phytophthora/IMG_9464 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9506.JPG",
+      "same_pixels_as": "phytophthora/IMG_9506 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9508.JPG",
+      "same_pixels_as": "phytophthora/IMG_9508 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9509.JPG",
+      "same_pixels_as": "phytophthora/IMG_9509 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9510.JPG",
+      "same_pixels_as": "phytophthora/IMG_9510 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9511.JPG",
+      "same_pixels_as": "phytophthora/IMG_9511 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9512.JPG",
+      "same_pixels_as": "phytophthora/IMG_9512 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9514.JPG",
+      "same_pixels_as": "phytophthora/IMG_9514 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9517.JPG",
+      "same_pixels_as": "phytophthora/IMG_9517 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9518.JPG",
+      "same_pixels_as": "phytophthora/IMG_9518 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9519.JPG",
+      "same_pixels_as": "phytophthora/IMG_9519 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9520.JPG",
+      "same_pixels_as": "phytophthora/IMG_9520 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9523.JPG",
+      "same_pixels_as": "phytophthora/IMG_9523 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9524.JPG",
+      "same_pixels_as": "phytophthora/IMG_9524 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9526.JPG",
+      "same_pixels_as": "phytophthora/IMG_9526 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9531.JPG",
+      "same_pixels_as": "phytophthora/IMG_9531 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9534.JPG",
+      "same_pixels_as": "phytophthora/IMG_9534 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9535.JPG",
+      "same_pixels_as": "phytophthora/IMG_9535 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9536.JPG",
+      "same_pixels_as": "phytophthora/IMG_9536 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9537.JPG",
+      "same_pixels_as": "phytophthora/IMG_9537 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9538.JPG",
+      "same_pixels_as": "phytophthora/IMG_9538 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9539.JPG",
+      "same_pixels_as": "phytophthora/IMG_9539 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9540.JPG",
+      "same_pixels_as": "phytophthora/IMG_9540 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9560.JPG",
+      "same_pixels_as": "phytophthora/IMG_9560 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9561.JPG",
+      "same_pixels_as": "phytophthora/IMG_9561 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9565.JPG",
+      "same_pixels_as": "phytophthora/IMG_9565 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9566.JPG",
+      "same_pixels_as": "phytophthora/IMG_9566 (1).JPG"
+    },
+    {
+      "path": "phytophthora/IMG_9567.JPG",
+      "same_pixels_as": "phytophthora/IMG_9567 (1).JPG"
+    },
+    {
+      "path": "virus/IMG_20230815_152740.jpg",
+      "same_pixels_as": "virus/IMG_20230815_152740(1).jpg"
+    }
+  ],
+  "near_duplicate_candidate_pairs": 87,
+  "mixed_label_candidate_pairs": 0,
+  "dhash_threshold": 4,
+  "group_count": 2983,
+  "split_counts": {
+    "train": {
+      "bacteria": 402,
+      "fungi": 520,
+      "healthy": 139,
+      "nematode": 46,
+      "pest": 419,
+      "phytophthora": 219,
+      "virus": 367
+    },
+    "val": {
+      "bacteria": 82,
+      "fungi": 111,
+      "healthy": 31,
+      "nematode": 9,
+      "pest": 87,
+      "phytophthora": 47,
+      "virus": 86
+    },
+    "test": {
+      "bacteria": 85,
+      "fungi": 109,
+      "healthy": 29,
+      "nematode": 12,
+      "pest": 95,
+      "phytophthora": 43,
+      "virus": 77
+    }
+  },
+  "balance_score": 0.15202087613331647,
+  "train_only_class_weights": {
+    "bacteria": 0.7505330490405118,
+    "fungi": 0.5802197802197803,
+    "healthy": 2.170606372045221,
+    "nematode": 6.559006211180124,
+    "pest": 0.7200818274803955,
+    "phytophthora": 1.3776908023483365,
+    "virus": 0.8221097703386532
+  },
+  "manifest_sha256": "9dbbe9a5bdcafce0cf9ce7d9ed8467b9fcecb5d3e79543e77c054314415ceb75",
+  "manual_groups_supplied": false,
+  "limitations": [
+    "dHash is a candidate detector, not a proof of visual duplication or plant identity.",
+    "Candidate pairs are conservatively connected and kept in one partition; only exact pixels are deduplicated.",
+    "Same-plant/session metadata has not been established. Plant-independent generalisation is not demonstrated.",
+    "A held-out split differs from the primary paper's stratified 10-fold protocol.",
+    "No model has been trained; no classification accuracy is measured in Phase II."
+  ]
+}

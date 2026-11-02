@@ -1,0 +1,88 @@
+left,right,distance,exact_pixels,labels_match
+bacteria/IMG_1111.JPG,bacteria/IMG_1112.JPG,3,False,True
+bacteria/IMG_1165.JPG,bacteria/IMG_1166.JPG,3,False,True
+bacteria/IMG_1177.JPG,bacteria/IMG_1178.JPG,1,False,True
+fungi/20230712_153941.jpg,fungi/20230712_153943.jpg,2,False,True
+fungi/20230712_154218.jpg,fungi/Copy of 20230712_154218.jpg,0,True,True
+fungi/IMG_0140.JPG,fungi/IMG_0141.JPG,3,False,True
+fungi/IMG_20230815_112512~2 (2).jpg,fungi/IMG_20230815_112512~2.jpg,0,True,True
+fungi/IMG_20230815_122340~2(1).jpg,fungi/IMG_20230815_122340~2.jpg,0,True,True
+fungi/IMG_20230816_080308.jpg,fungi/IMG_20230816_080308_1.jpg,3,False,True
+fungi/IMG_20230816_084638 (1)(1).jpg,fungi/IMG_20230816_084638 (1).jpg,0,True,True
+fungi/IMG_20230816_122345~2 (2).jpg,fungi/IMG_20230816_122345~2.jpg,0,True,True
+fungi/IMG_9384.JPG,fungi/IMG_9385.JPG,4,False,True
+fungi/IMG_9399.JPG,fungi/IMG_9400.JPG,1,False,True
+fungi/IMG_9403.JPG,fungi/IMG_9404.JPG,1,False,True
+fungi/IMG_9410.JPG,fungi/IMG_9411.JPG,1,False,True
+fungi/IMG_9422.JPG,fungi/IMG_9423.JPG,3,False,True
+fungi/IMG_9431.JPG,fungi/IMG_9432.JPG,4,False,True
+fungi/IMG_9433.JPG,fungi/IMG_9434.JPG,2,False,True
+fungi/IMG_9470.JPG,fungi/IMG_9471.JPG,4,False,True
+healthy/20230712_121645 (1).jpg,healthy/20230712_121645.jpg,0,True,True
+pest/20230712_123331.jpg,pest/20230712_123334.jpg,3,False,True
+pest/IMG_0123 (1).JPG,pest/IMG_0123.JPG,0,True,True
+pest/IMG_0181.JPG,pest/IMG_0182.JPG,3,False,True
+pest/IMG_0205 (1).JPG,pest/IMG_0205.JPG,0,True,True
+pest/IMG_0208 (1).JPG,pest/IMG_0208.JPG,0,True,True
+pest/IMG_0225 (1).JPG,pest/IMG_0225.JPG,0,True,True
+pest/IMG_0609.JPG,pest/IMG_0610.JPG,1,False,True
+pest/IMG_0930.JPG,pest/IMG_0931.JPG,3,False,True
+pest/IMG_9412.JPG,pest/IMG_9413.JPG,1,False,True
+pest/IMG_9551.JPG,pest/IMG_9552.JPG,3,False,True
+phytophthora/IMG_0261 - Copy (1).JPG,phytophthora/IMG_0261 - Copy.JPG,0,True,True
+phytophthora/IMG_0390 (1).JPG,phytophthora/IMG_0390.JPG,0,True,True
+phytophthora/IMG_0403.JPG,phytophthora/IMG_0404.JPG,1,False,True
+phytophthora/IMG_4815 (1).JPG,phytophthora/IMG_4815.JPG,0,True,True
+phytophthora/IMG_9425 (1).JPG,phytophthora/IMG_9425.JPG,0,True,True
+phytophthora/IMG_9425 (1).JPG,phytophthora/IMG_9426 (1).JPG,1,False,True
+phytophthora/IMG_9425.JPG,phytophthora/IMG_9426 (1).JPG,1,False,True
+phytophthora/IMG_9425 (1).JPG,phytophthora/IMG_9426.JPG,1,False,True
+phytophthora/IMG_9425.JPG,phytophthora/IMG_9426.JPG,1,False,True
+phytophthora/IMG_9426 (1).JPG,phytophthora/IMG_9426.JPG,0,True,True
+phytophthora/IMG_9430 (1).JPG,phytophthora/IMG_9430.JPG,0,True,True
+phytophthora/IMG_9439 (1).JPG,phytophthora/IMG_9439.JPG,0,True,True
+phytophthora/IMG_9439 (1).JPG,phytophthora/IMG_9440 (1).JPG,1,False,True
+phytophthora/IMG_9439.JPG,phytophthora/IMG_9440 (1).JPG,1,False,True
+phytophthora/IMG_9439 (1).JPG,phytophthora/IMG_9440.JPG,1,False,True
+phytophthora/IMG_9439.JPG,phytophthora/IMG_9440.JPG,1,False,True
+phytophthora/IMG_9440 (1).JPG,phytophthora/IMG_9440.JPG,0,True,True
+phytophthora/IMG_9443 (1).JPG,phytophthora/IMG_9443.JPG,0,True,True
+phytophthora/IMG_9463 (1).JPG,phytophthora/IMG_9463.JPG,0,True,True
+phytophthora/IMG_9464 (1).JPG,phytophthora/IMG_9464.JPG,0,True,True
+phytophthora/IMG_9506 (1).JPG,phytophthora/IMG_9506.JPG,0,True,True
+phytophthora/IMG_9508 (1).JPG,phytophthora/IMG_9508.JPG,0,True,True
+phytophthora/IMG_9509 (1).JPG,phytophthora/IMG_9509.JPG,0,True,True
+phytophthora/IMG_9510 (1).JPG,phytophthora/IMG_9510.JPG,0,True,True
+phytophthora/IMG_9511 (1).JPG,phytophthora/IMG_9511.JPG,0,True,True
+phytophthora/IMG_9512 (1).JPG,phytophthora/IMG_9512.JPG,0,True,True
+phytophthora/IMG_9514 (1).JPG,phytophthora/IMG_9514.JPG,0,True,True
+phytophthora/IMG_9517 (1).JPG,phytophthora/IMG_9517.JPG,0,True,True
+phytophthora/IMG_9518 (1).JPG,phytophthora/IMG_9518.JPG,0,True,True
+phytophthora/IMG_9519 (1).JPG,phytophthora/IMG_9519.JPG,0,True,True
+phytophthora/IMG_9520 (1).JPG,phytophthora/IMG_9520.JPG,0,True,True
+phytophthora/IMG_9523 (1).JPG,phytophthora/IMG_9523.JPG,0,True,True
+phytophthora/IMG_9524 (1).JPG,phytophthora/IMG_9524.JPG,0,True,True
+phytophthora/IMG_9526 (1).JPG,phytophthora/IMG_9526.JPG,0,True,True
+phytophthora/IMG_9531 (1).JPG,phytophthora/IMG_9531.JPG,0,True,True
+phytophthora/IMG_9534 (1).JPG,phytophthora/IMG_9534.JPG,0,True,True
+phytophthora/IMG_9535 (1).JPG,phytophthora/IMG_9535.JPG,0,True,True
+phytophthora/IMG_9536 (1).JPG,phytophthora/IMG_9536.JPG,0,True,True
+phytophthora/IMG_9537 (1).JPG,phytophthora/IMG_9537.JPG,0,True,True
+phytophthora/IMG_9538 (1).JPG,phytophthora/IMG_9538.JPG,0,True,True
+phytophthora/IMG_9539 (1).JPG,phytophthora/IMG_9539.JPG,0,True,True
+phytophthora/IMG_9540 (1).JPG,phytophthora/IMG_9540.JPG,0,True,True
+phytophthora/IMG_9560 (1).JPG,phytophthora/IMG_9560.JPG,0,True,True
+phytophthora/IMG_9561 (1).JPG,phytophthora/IMG_9561.JPG,0,True,True
+phytophthora/IMG_9565 (1).JPG,phytophthora/IMG_9565.JPG,0,True,True
+phytophthora/IMG_9566 (1).JPG,phytophthora/IMG_9566.JPG,0,True,True
+phytophthora/IMG_9567 (1).JPG,phytophthora/IMG_9567.JPG,0,True,True
+virus/IMG_0464.JPG,virus/IMG_0465.JPG,1,False,True
+virus/IMG_0933.JPG,virus/IMG_0934.JPG,1,False,True
+virus/IMG_0994.JPG,virus/IMG_0995.JPG,1,False,True
+virus/IMG_0996.JPG,virus/IMG_0997.JPG,1,False,True
+virus/IMG_1057.JPG,virus/IMG_1058.JPG,1,False,True
+virus/IMG_1072.JPG,virus/IMG_1073.JPG,1,False,True
+virus/IMG_1104.JPG,virus/IMG_1105.JPG,1,False,True
+virus/IMG_1121.JPG,virus/IMG_1122.JPG,3,False,True
+virus/IMG_20230815_152740(1).jpg,virus/IMG_20230815_152740.jpg,0,True,True
+virus/IMG_8208.JPG,virus/IMG_8209.JPG,3,False,True
