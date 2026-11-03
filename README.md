@@ -2,7 +2,7 @@
 
 Custom CNN and InceptionV3 + SVM experiments for seven-category potato leaf classification.
 
-## Current status
+## Current status---
 
 Phase I research plan and Phase II dataset preparation tools are available.
 No classification model has been trained and no project accuracy has been measured.
