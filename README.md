@@ -8,6 +8,7 @@ Phase I research plan and Phase II dataset preparation tools are available.
 No classification model has been trained and no project accuracy has been measured.
 
 - [Phase I research and scope](PHASE_I_RESEARCH_AND_SCOPE.md): paper, objectives, proposed responsibilities and guide decisions.
+- [Extended literature review](LITERATURE_REVIEW.md): additional potato-specific journal papers, stronger same-dataset references and proposed team reading assignments.
 - [Dataset setup and audit procedure](DATASET.md): source attribution, downloads, duplicate handling and reproducible partitions.
 - [Phase II results](PHASE_II_RESULTS.md): actual audit findings, split counts and remaining limits.
 - [Frozen image manifest](reports/data-v1/manifest.csv) and [machine-readable audit](reports/data-v1/audit.json).
