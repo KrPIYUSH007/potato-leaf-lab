@@ -1,0 +1,58 @@
+{
+  "regnet_y_400mf": {
+    "status": "architecture_verified_training_pending",
+    "weights": "RegNet_Y_400MF_Weights.IMAGENET1K_V2",
+    "classes": [
+      "bacteria",
+      "fungi",
+      "healthy",
+      "nematode",
+      "pest",
+      "phytophthora",
+      "virus"
+    ],
+    "input_shape": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "output_shape": [
+      1,
+      7
+    ],
+    "device": "cuda",
+    "total_parameters": 3906231,
+    "head_stage_trainable_parameters": 3087,
+    "fine_tune_stage_trainable_parameters": 3055529,
+    "validation_transform": "ImageClassification(\n    crop_size=[224]\n    resize_size=[232]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+  },
+  "mobilenet_v2": {
+    "status": "architecture_verified_training_pending",
+    "weights": "MobileNet_V2_Weights.IMAGENET1K_V2",
+    "classes": [
+      "bacteria",
+      "fungi",
+      "healthy",
+      "nematode",
+      "pest",
+      "phytophthora",
+      "virus"
+    ],
+    "input_shape": [
+      1,
+      3,
+      224,
+      224
+    ],
+    "output_shape": [
+      1,
+      7
+    ],
+    "device": "cuda",
+    "total_parameters": 2232839,
+    "head_stage_trainable_parameters": 8967,
+    "fine_tune_stage_trainable_parameters": 1535047,
+    "validation_transform": "ImageClassification(\n    crop_size=[224]\n    resize_size=[232]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+  }
+}

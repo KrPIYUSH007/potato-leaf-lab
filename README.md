@@ -1,6 +1,6 @@
 # Potato Leaf Lab
 
-Custom CNN and InceptionV3 + SVM experiments for seven-category potato leaf classification.
+Custom CNN, RegNetY-400MF, MobileNetV2 and InceptionV3 + SVM experiments for seven-category potato leaf classification.
 
 ## Current status---
 
@@ -37,10 +37,26 @@ Raw images remain local and are not included in Git. The download is about 754 M
 ## Planned model experiments
 
 1. InceptionV3 features + SVM, based on the selected paper.
-2. Custom CNN trained from scratch with ordinary loss.
-3. The same CNN with class-weighted loss.
+2. Fine-tuned RegNetY-400MF.
+3. Fine-tuned MobileNetV2.
+4. Custom CNN trained from scratch with ordinary loss.
+5. The same CNN with class-weighted loss.
 
 All use common partitions. The initial held-out evaluation and dataset exclusions
 differ from the paper's protocol, so a score above its 62.6% does not alone establish
 an improvement over the publication. The baseline has been implemented and evaluated on validation data.
 Custom CNN training and the Streamlit demonstration follow.
+
+## Additional pretrained model definitions
+
+`leaflab/models.py` provides seven-category RegNetY-400MF and MobileNetV2 models. Both use explicit `IMAGENET1K_V2` weight presets and their matching validation transforms. Model definitions are ready; potato-dataset training remains pending.
+
+```powershell
+& ./.venv/Scripts/python.exe -m leaflab.models --device cuda
+```
+
+This command downloads the ImageNet weights into `runs/torch-hub`, verifies a seven-score output on a synthetic input and saves `reports/transfer_models.json`. It checks architecture readiness. Potato classification metrics will be recorded after dataset training.
+
+For the forthcoming trainer, instantiate `TransferClassifier('regnet_y_400mf')` or `TransferClassifier('mobilenet_v2')`. The initial `head` stage trains the new output layer. Call `set_stage('fine_tune')` to enable RegNet's final backbone stage or MobileNet's final four feature blocks. Rebuild the optimizer with the currently trainable parameters when changing stages. Frozen batch-normalization statistics remain fixed when calling `train()`.
+
+The model definitions follow the [RegNetY-400MF documentation](https://docs.pytorch.org/vision/0.24/models/generated/torchvision.models.regnet_y_400mf.html) and [MobileNetV2 documentation](https://docs.pytorch.org/vision/0.24/models/generated/torchvision.models.mobilenet_v2.html).

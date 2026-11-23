@@ -4,7 +4,7 @@ Last updated: 23 November 2026 (Asia/Calcutta)
 
 ## Project scope
 
-Develop a seven-category potato leaf image classifier. Compare an InceptionV3 feature extractor with an SVM classifier against a custom CNN trained with standard and class-weighted loss. Evaluate the methods on shared partitions and demonstrate the selected model through a Streamlit application.
+Develop a seven-category potato leaf image classifier. Compare five experiments using shared partitions: InceptionV3 features + SVM, fine-tuned RegNetY-400MF, fine-tuned MobileNetV2, a custom CNN with standard loss, and the same custom CNN with class-weighted loss. Demonstrate the selected model through a Streamlit application.
 
 ## Current position
 
@@ -15,7 +15,7 @@ Develop a seven-category potato leaf image classifier. Compare an InceptionV3 fe
 | 1. Research and scope | Materials prepared; guide acceptance pending confirmation | Scope, literature survey and design accepted |
 | 2. Dataset preparation | Complete, with documented audit limitations | Audited dataset and fixed partitions ready |
 | 3. Environment and baseline | Complete | Saved InceptionV3 + SVM with validation results and verified CPU/GPU prediction |
-| 4. Custom CNN development | Pending | Standard-loss and class-weighted CNN experiments completed |
+| 4. CNN and transfer-model development | Model definitions added; training pending | RegNetY-400MF, MobileNetV2 and both custom CNN experiments completed |
 | 5. Evaluation and model selection | Pending | Selected model evaluated on held-out test data |
 | 6. Application integration | Pending; design drafted | Upload-to-prediction workflow works in Streamlit |
 | 7. Final testing and submission | Pending | Tested demo, final report and presentation ready |
@@ -76,7 +76,22 @@ The seven categories are bacteria, fungi, healthy, nematode, pest, phytophthora 
 
 Milestone achieved on 23 November 2026. PyTorch 2.9.1+cu128 successfully executed on the RTX 3050. The selected RBF SVM uses C=10 and gamma=scale. Validation accuracy is 68.87% and macro-F1 is 63.36%. Eight tests passed. See [Phase III results](PHASE_III_RESULTS.md) and [reproduction commands](BASELINE.md).
 
-## 4. Custom CNN development
+## 4. CNN and transfer-model development
+
+| Experiment | Current status |
+|---|---|
+| InceptionV3 + SVM | Complete; 68.87% validation accuracy and 63.36% macro-F1 |
+| RegNetY-400MF | Seven-category definition added; training pending |
+| MobileNetV2 | Seven-category definition added; training pending |
+| Custom CNN with standard loss | Implementation and training pending |
+| Custom CNN with class-weighted loss | Implementation and training pending |
+
+- [x] Add RegNetY-400MF and MobileNetV2 definitions with seven-category output layers.
+- [x] Define separate head-training and final-backbone fine-tuning stages, preserving frozen batch-normalization statistics.
+- [x] Verify ImageNet-pretrained model loading and seven-category synthetic-input outputs on CUDA; all 10 project tests pass. See [model readiness report](reports/transfer_models.json).
+- [ ] Train the RegNetY-400MF head, then fine-tune its final backbone stage using the fixed training/validation partitions.
+- [ ] Train the MobileNetV2 head, then fine-tune its final four feature blocks using the same partitions.
+- [ ] Record checkpoints, configurations and validation results for both pretrained models.
 
 - [ ] Implement the proposed four-block CNN with 32, 64, 128 and 256 filters.
 - [ ] Implement 224 × 224 RGB preprocessing, normalization and training-only augmentation.
@@ -84,7 +99,7 @@ Milestone achieved on 23 November 2026. PyTorch 2.9.1+cu128 successfully execute
 - [ ] Train the matched class-weighted variant using weights calculated from training counts.
 - [ ] Record configurations, seeds, training curves and validation metrics for both variants.
 
-Milestone: both CNN variants have reproducible training runs and validation results.
+Milestone: all four neural-network experiments have reproducible training runs and validation results. Select settings using validation macro-F1, alongside accuracy and per-category recall. Keep the test partition reserved for final evaluation.
 
 ## 5. Evaluation and model selection
 
@@ -148,3 +163,4 @@ Update this file after each development task with the date, completed checklist 
 | 23 November 2026 | Inspected saved preparation reports and created this tracker. Model-training files/results remain pending in the inspected checkout | Verify PyTorch/CUDA and implement InceptionV3 + SVM |
 | 23 November 2026 | Synced the tracker and review documents into the original potato-leaf-lab checkout and existing GitHub repository | Begin baseline implementation |
 | 23 November 2026 | Completed Phase III in the original checkout. Verified CUDA, trained eight SVM candidates, saved the selected model and validation reports, passed eight tests, and checked saved-model prediction on CPU and CUDA. Accuracy 68.87%, macro-F1 63.36% | Develop and train the custom CNN with standard and class-weighted loss |
+| 23 November 2026 | Added RegNetY-400MF and MobileNetV2 to the comparison scope and implemented their seven-category definitions with staged fine-tuning | Train the additional models and implement the custom CNN variants |
