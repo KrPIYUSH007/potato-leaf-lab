@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Potato Leaf Lab: validate dataset",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "leaflab",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["validate", "--data", "data/raw"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Potato Leaf Lab: command help",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "leaflab",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["--help"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}
+ 
