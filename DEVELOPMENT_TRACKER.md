@@ -8,13 +8,13 @@ Develop a seven-category potato leaf image classifier. Compare an InceptionV3 fe
 
 ## Current position
 
-**Dataset preparation is complete. The next development phase is environment setup and baseline implementation.** Research materials and presentation are prepared. Formal guide acceptance remains unconfirmed. No trained model or measured project accuracy is recorded in the inspected project files.
+**Dataset preparation and the InceptionV3 + SVM baseline are complete. Custom CNN development is next.** The saved baseline achieved **68.87% validation accuracy** and **63.36% validation macro-F1** on 453 images. The 450-image test partition remains reserved. Formal guide acceptance remains unconfirmed.
 
 | Phase | Status | Completion milestone |
 |---|---|---|
 | 1. Research and scope | Materials prepared; guide acceptance pending confirmation | Scope, literature survey and design accepted |
 | 2. Dataset preparation | Complete, with documented audit limitations | Audited dataset and fixed partitions ready |
-| 3. Environment and baseline | Pending | Working InceptionV3 + SVM with validation results |
+| 3. Environment and baseline | Complete | Saved InceptionV3 + SVM with validation results and verified CPU/GPU prediction |
 | 4. Custom CNN development | Pending | Standard-loss and class-weighted CNN experiments completed |
 | 5. Evaluation and model selection | Pending | Selected model evaluated on held-out test data |
 | 6. Application integration | Pending; design drafted | Upload-to-prediction workflow works in Streamlit |
@@ -65,15 +65,16 @@ The seven categories are bacteria, fungi, healthy, nematode, pest, phytophthora 
 
 ## 3. Environment and baseline implementation
 
-- [ ] Set up and record the model-training dependencies.
-- [ ] Verify PyTorch installation and CUDA execution on the laptop GPU.
-- [ ] Load images using the existing fixed manifest.
-- [ ] Implement InceptionV3-specific input preprocessing and frozen feature extraction.
-- [ ] Fit the SVM using training features and choose its settings using validation data.
-- [ ] Save the baseline, class-label order and preprocessing configuration.
-- [ ] Record validation accuracy, macro-F1 and per-category recall.
+- [x] Set up and record the model-training dependencies.
+- [x] Verify PyTorch installation and CUDA execution on the laptop GPU.
+- [x] Load images using the existing fixed manifest.
+- [x] Implement InceptionV3-specific input preprocessing and frozen feature extraction.
+- [x] Fit the SVM using training features and choose its settings using validation data.
+- [x] Save the baseline, class-label order and preprocessing configuration.
+- [x] Record validation accuracy, macro-F1 and per-category recall.
+- [x] Verify saved-bundle image prediction on both CPU and CUDA against the recorded validation prediction.
 
-Milestone: a reproducible baseline run with saved artifacts and validation metrics. The existing data environment has not established PyTorch/CUDA support.
+Milestone achieved on 23 November 2026. PyTorch 2.9.1+cu128 successfully executed on the RTX 3050. The selected RBF SVM uses C=10 and gamma=scale. Validation accuracy is 68.87% and macro-F1 is 63.36%. Eight tests passed. See [Phase III results](PHASE_III_RESULTS.md) and [reproduction commands](BASELINE.md).
 
 ## 4. Custom CNN development
 
@@ -126,6 +127,8 @@ The original project folder is `C:/Users/Lenovo/.codex/visualizations/2026/10/26
 
 - [Phase I scope document](PHASE_I_RESEARCH_AND_SCOPE.md)
 - [Phase II results](PHASE_II_RESULTS.md)
+- [Phase III baseline results](PHASE_III_RESULTS.md)
+- [Baseline reproduction and image prediction](BASELINE.md)
 - [Dataset preparation and reproduction](DATASET.md)
 - [Fixed dataset manifest](reports/data-v1/manifest.csv)
 - [Review 1 presentation](docs/presentations/Plant_Leaf_Review1_Literature_Updated.pptx)
@@ -143,5 +146,5 @@ Update this file after each development task with the date, completed checklist 
 | 5 November 2026 | Revised Review 1 deck produced with 15 supporting papers across six literature slides | Complete design and begin baseline implementation |
 | 11 November 2026 | Architecture and UML diagrams drafted in the chat, including a three-layer prediction architecture | Finalize diagrams against implementation |
 | 23 November 2026 | Inspected saved preparation reports and created this tracker. Model-training files/results remain pending in the inspected checkout | Verify PyTorch/CUDA and implement InceptionV3 + SVM |
-
-| 23 November 2026 | Consolidated source code, local dataset, audit reports and current review documents into the designated project folder. Revalidated all 3,015 manifest rows and checked README/tracker links. Included tracker and documents in the GitHub update | Verify PyTorch/CUDA and implement the baseline |
+| 23 November 2026 | Synced the tracker and review documents into the original potato-leaf-lab checkout and existing GitHub repository | Begin baseline implementation |
+| 23 November 2026 | Completed Phase III in the original checkout. Verified CUDA, trained eight SVM candidates, saved the selected model and validation reports, passed eight tests, and checked saved-model prediction on CPU and CUDA. Accuracy 68.87%, macro-F1 63.36% | Develop and train the custom CNN with standard and class-weighted loss |

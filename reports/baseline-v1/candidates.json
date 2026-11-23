@@ -1,0 +1,90 @@
+[
+  {
+    "parameters": {
+      "kernel": "linear",
+      "C": 0.1,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.5893033251065821,
+    "validation_accuracy": 0.6578366445916115,
+    "fit_and_predict_seconds": 4.514476299984381
+  },
+  {
+    "parameters": {
+      "kernel": "linear",
+      "C": 1.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.5893033251065821,
+    "validation_accuracy": 0.6578366445916115,
+    "fit_and_predict_seconds": 4.304041700088419
+  },
+  {
+    "parameters": {
+      "kernel": "linear",
+      "C": 10.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.5893033251065821,
+    "validation_accuracy": 0.6578366445916115,
+    "fit_and_predict_seconds": 4.469885800033808
+  },
+  {
+    "parameters": {
+      "kernel": "linear",
+      "C": 100.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.5893033251065821,
+    "validation_accuracy": 0.6578366445916115,
+    "fit_and_predict_seconds": 4.161382099962793
+  },
+  {
+    "parameters": {
+      "kernel": "rbf",
+      "C": 0.1,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.2808060651135934,
+    "validation_accuracy": 0.46578366445916114,
+    "fit_and_predict_seconds": 7.881620400003158
+  },
+  {
+    "parameters": {
+      "kernel": "rbf",
+      "C": 1.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.6017359433794278,
+    "validation_accuracy": 0.6799116997792495,
+    "fit_and_predict_seconds": 6.651746700052172
+  },
+  {
+    "parameters": {
+      "kernel": "rbf",
+      "C": 10.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.6335611716880666,
+    "validation_accuracy": 0.6887417218543046,
+    "fit_and_predict_seconds": 8.238699899986386
+  },
+  {
+    "parameters": {
+      "kernel": "rbf",
+      "C": 100.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "validation_macro_f1": 0.6335611716880666,
+    "validation_accuracy": 0.6887417218543046,
+    "fit_and_predict_seconds": 7.96490470005665
+  }
+]

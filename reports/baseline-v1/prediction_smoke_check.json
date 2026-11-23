@@ -1,0 +1,15 @@
+{
+  "image": "bacteria/1692335403904.jpg",
+  "true_label": "bacteria",
+  "saved_validation_prediction": "bacteria",
+  "devices": {
+    "cpu": {
+      "predicted_category": "bacteria",
+      "matches_validation_prediction": true
+    },
+    "cuda": {
+      "predicted_category": "bacteria",
+      "matches_validation_prediction": true
+    }
+  }
+}

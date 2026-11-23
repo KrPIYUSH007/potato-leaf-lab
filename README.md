@@ -4,10 +4,12 @@ Custom CNN and InceptionV3 + SVM experiments for seven-category potato leaf clas
 
 ## Current status---
 
-Research materials and Phase II dataset preparation are complete. The next phase is model-training environment setup and baseline implementation.
-No classification model has been trained and no project accuracy has been measured.
+Research, dataset preparation and the InceptionV3 + SVM baseline are complete.
+The selected baseline achieved **68.87% validation accuracy** and **63.36% validation macro-F1** on 453 images. The 450-image test partition remains reserved for final evaluation. Custom CNN training is next.
 
 - [Development tracker](DEVELOPMENT_TRACKER.md) covers milestones, completed work and pending tasks.
+- [Baseline results](PHASE_III_RESULTS.md) records the actual validation metrics, environment and remaining work.
+- [Baseline setup and commands](BASELINE.md) explains training, saved models and image prediction.
 - [Latest Review 1 presentation](docs/presentations/Plant_Leaf_Review1_Literature_Updated.pptx).
 - [Research review document](docs/research/Potato_Leaf_Project_Research_Review.docx).
 - [Phase I research and scope](PHASE_I_RESEARCH_AND_SCOPE.md): paper, objectives, proposed responsibilities and guide decisions.
@@ -40,5 +42,5 @@ Raw images remain local and are not included in Git. The download is about 754 M
 
 All use common partitions. The initial held-out evaluation and dataset exclusions
 differ from the paper's protocol, so a score above its 62.6% does not alone establish
-an improvement over the publication. The next phase implements the baseline;
-CNN training and the Streamlit demonstration follow.
+an improvement over the publication. The baseline has been implemented and evaluated on validation data.
+Custom CNN training and the Streamlit demonstration follow.

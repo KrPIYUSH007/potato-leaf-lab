@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "model": "frozen_inception_v3_plus_svm",
+  "created_at_utc": "2026-11-23T15:47:45.088494+00:00",
+  "manifest_sha256": "9dbbe9a5bdcafce0cf9ce7d9ed8467b9fcecb5d3e79543e77c054314415ceb75",
+  "seed": 42,
+  "training_images": 2112,
+  "validation_images": 453,
+  "test_images_used_for_fitting_or_selection": 0,
+  "preprocessing": {
+    "weights": "Inception_V3_Weights.IMAGENET1K_V1",
+    "exif_transpose": true,
+    "color": "RGB",
+    "resize_shorter_edge": 342,
+    "center_crop": 299,
+    "interpolation": "bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "inception_transform_input": true,
+    "feature_layer": "global_average_pool_before_fc",
+    "feature_dimensions": 2048
+  },
+  "class_order": [
+    "bacteria",
+    "fungi",
+    "healthy",
+    "nematode",
+    "pest",
+    "phytophthora",
+    "virus"
+  ],
+  "svm": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "gamma": "scale",
+    "class_weight": null
+  },
+  "selection_rule": "highest validation macro-F1, then accuracy, then first candidate",
+  "candidate_count": 8,
+  "environment": {
+    "recorded_at_utc": "2026-11-23T15:44:31.322477+00:00",
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "Pillow": "13.0.0",
+      "joblib": "1.6.0"
+    },
+    "cuda_available": true,
+    "torch_cuda_runtime": "12.8",
+    "cudnn_version": 91002,
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "gpu_memory_bytes": 6441926656,
+    "cuda_matrix_multiply_passed": true
+  },
+  "feature_extractor_sha256": "f5ed8c811df76a6ad7cd8a0469581c7b299dd639a9f5150a6cd9c42458e75da8",
+  "svm_sha256": "cfc3ade9c76151b8e8712817565f4ab294824b28f649545a81b7821ff6be6ec8",
+  "complete_bundle_bytes_excluding_metadata": 105739860
+}

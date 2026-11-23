@@ -1,0 +1,8 @@
+true / predicted,bacteria,fungi,healthy,nematode,pest,phytophthora,virus
+bacteria,76,3,0,0,1,1,1
+fungi,0,86,1,0,20,0,4
+healthy,0,3,17,0,6,1,4
+nematode,1,5,0,2,1,0,0
+pest,1,24,1,0,52,3,6
+phytophthora,3,16,0,0,6,22,0
+virus,5,13,6,0,5,0,57
