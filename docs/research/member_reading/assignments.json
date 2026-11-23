@@ -1,0 +1,49 @@
+{
+  "groups": [
+    {
+      "name": "NIKETH P",
+      "usn": "1BF24CS199",
+      "file": "Niketh_Five_Research_Papers.docx",
+      "focus": "Model architectures",
+      "ids": [
+        "P02",
+        "P03",
+        "P10",
+        "P11",
+        "P14"
+      ]
+    },
+    {
+      "name": "OMKAR KUMAR",
+      "usn": "1BF24CS205",
+      "file": "Omkar_Five_Research_Papers.docx",
+      "focus": "Class imbalance and training",
+      "ids": [
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09"
+      ]
+    },
+    {
+      "name": "Piyush Kumar",
+      "usn": "1BF24CS216",
+      "file": "Piyush_Five_Research_Papers.docx",
+      "focus": "Datasets evaluation and explainability",
+      "ids": [
+        "P04",
+        "P12",
+        "P16",
+        "P17",
+        "P18"
+      ]
+    }
+  ],
+  "shared_main_paper": "P01",
+  "supporting_papers_omitted": [
+    "P13",
+    "P15"
+  ],
+  "note": "The selected 15 supporting papers are assigned once each. The primary reference remains shared reading."
+}

@@ -4,9 +4,12 @@ Custom CNN and InceptionV3 + SVM experiments for seven-category potato leaf clas
 
 ## Current status---
 
-Phase I research plan and Phase II dataset preparation tools are available.
+Research materials and Phase II dataset preparation are complete. The next phase is model-training environment setup and baseline implementation.
 No classification model has been trained and no project accuracy has been measured.
 
+- [Development tracker](DEVELOPMENT_TRACKER.md) covers milestones, completed work and pending tasks.
+- [Latest Review 1 presentation](docs/presentations/Plant_Leaf_Review1_Literature_Updated.pptx).
+- [Research review document](docs/research/Potato_Leaf_Project_Research_Review.docx).
 - [Phase I research and scope](PHASE_I_RESEARCH_AND_SCOPE.md): paper, objectives, proposed responsibilities and guide decisions.
 - [Extended literature review](LITERATURE_REVIEW.md): additional potato-specific journal papers, stronger same-dataset references and proposed team reading assignments.
 - [Dataset setup and audit procedure](DATASET.md): source attribution, downloads, duplicate handling and reproducible partitions.
