@@ -122,7 +122,7 @@ Milestone: a reproducible application, complete report and presentation ready fo
 
 ## Evidence and file locations
 
-The designated project folder is `C:/Users/Lenovo/Documents/ChatGPT/MINI PROJECT`. It contains the source code, local raw dataset, audit reports, research documents and latest presentation. GitHub contains the source code, tracker, reports and review documents. Raw dataset files remain local under the existing dataset exclusion rule.
+The original project folder is `C:/Users/Lenovo/.codex/visualizations/2026/10/26/01a1786e-86f2-7302-8d81-eebdce12c1bb/potato-leaf-lab`. Continue all development and tracker updates in this existing checkout. It contains the source code, local raw dataset, audit reports, research documents and latest presentation. GitHub contains the source code, tracker, reports and review documents. Raw dataset files remain local under the existing dataset exclusion rule.
 
 - [Phase I scope document](PHASE_I_RESEARCH_AND_SCOPE.md)
 - [Phase II results](PHASE_II_RESULTS.md)
