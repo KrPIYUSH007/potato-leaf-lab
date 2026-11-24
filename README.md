@@ -4,8 +4,8 @@ Custom CNN, RegNetY-400MF, MobileNetV2 and InceptionV3 + SVM experiments for sev
 
 ## Current status---
 
-Research, dataset preparation and the InceptionV3 + SVM baseline are complete.
-The selected baseline achieved **68.87% validation accuracy** and **63.36% validation macro-F1** on 453 images. The 450-image test partition remains reserved for final evaluation. Custom CNN training is next.
+Research, dataset preparation, and both initial, optimized, and maximum-performance InceptionV3 + SVM baselines are complete.
+The original baseline achieved **68.87% validation accuracy** and **63.36% validation macro-F1**. The optimized `baseline-v2` reached **73.29% validation accuracy** and **69.31% macro-F1**. The dual-backbone `baseline-v3` reached **76.60% validation accuracy** and **75.06% macro-F1**. The champion `baseline-v4` (Tri-Backbone InceptionV3 + ResNet-50 + ConvNeXt-Tiny with a Two-Stage Hierarchical Cascade) broke through the 80%+ barrier, reaching **80.35% validation accuracy** (+11.48% over v1) and **78.03% validation macro-F1** (+14.67% over v1) on 453 images. The 450-image test partition remains strictly reserved for final evaluation. Custom CNN training is next.
 
 - [Development tracker](DEVELOPMENT_TRACKER.md) covers milestones, completed work and pending tasks.
 - [Baseline results](PHASE_III_RESULTS.md) records the actual validation metrics, environment and remaining work.

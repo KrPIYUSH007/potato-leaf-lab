@@ -1,6 +1,6 @@
 {
-  "recorded_at_utc": "2026-11-23T15:43:55.133710+00:00",
-  "python": "3.12.14",
+  "recorded_at_utc": "2026-11-23T16:48:09.452787+00:00",
+  "python": "3.12.4",
   "platform": "Windows-11-10.0.26300-SP0",
   "packages": {
     "torch": "2.9.1+cu128",
@@ -13,7 +13,7 @@
   "cuda_available": true,
   "torch_cuda_runtime": "12.8",
   "cudnn_version": 91002,
-  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
-  "gpu_memory_bytes": 6441926656,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "gpu_memory_bytes": 4294443008,
   "cuda_matrix_multiply_passed": true
 }

@@ -1,4 +1,5 @@
 """Regression check that validation data never fits the baseline scaler or SVM."""
+import leaflab.prepare
 import numpy as np
 import pytest
 

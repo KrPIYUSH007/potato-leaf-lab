@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "model": "optimized_inception_v3_plus_svm",
+  "pipeline_details": "Candidate 2 (Optimal Balance): TTA + StandardScaler + Normalizer(L2) + RBF C=1, balanced",
+  "feature_type": "TTA",
+  "scaler": "StandardScaler + Normalizer(L2)",
+  "kernel": "rbf",
+  "C": 1.0,
+  "gamma": "scale",
+  "class_weight": "balanced",
+  "validation_accuracy": 0.7328918322295805,
+  "validation_macro_f1": 0.693099594498998,
+  "accuracy_gain": 0.04415011037527594,
+  "macro_f1_gain": 0.05953842281093147,
+  "training_images": 2112,
+  "validation_images": 453,
+  "class_order": [
+    "bacteria",
+    "fungi",
+    "healthy",
+    "nematode",
+    "pest",
+    "phytophthora",
+    "virus"
+  ]
+}

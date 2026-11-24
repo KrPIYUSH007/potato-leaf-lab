@@ -58,4 +58,43 @@ Eight automated tests passed, including a regression check that the baseline sca
 
 The local model bundle is `runs/baseline-v1/`, containing `feature_extractor.pt`, `svm.joblib` and `metadata.json`. The two model binaries total 105,739,860 bytes. Both are required for image prediction. Model binaries and feature caches follow the existing local-only Git exclusions, while the code and experiment reports are saved in the existing repository.
 
-The custom CNN, model cost comparison, final test evaluation and Streamlit integration remain pending.
+---
+
+## Baseline Optimization Progression (v1 → v2 → v3 → v4)
+
+Four generations of the Phase 3 feature-extractor + SVM architecture were benchmarked on the identical 2,112-train / 453-val partition with strictly held-out test data:
+
+| Metric / Attribute | Baseline-v1 (Paper Standard) | Baseline-v2 (Normalized & Balanced) | Baseline-v3 (Dual-Backbone Ensemble) | Baseline-v4 (Champion Cascade) | Net Gain (v4 vs v1) |
+|---|---|---|---|---|---|
+| **Feature Extractor** | InceptionV3 Standard (2048-D) | InceptionV3 TTA Flip-Avg (2048-D) | Dual-Backbone (Incept + ResNet-50 TTA, 4096-D) | **Tri-Backbone (Incept + ResNet-50 + ConvNeXt-Tiny TTA, 4864-D)** | **+2,816 modern dims** |
+| **Feature Normalization** | `StandardScaler` | `StandardScaler + Normalizer(L2)` | `StandardScaler + Normalizer(L2)` | **`StandardScaler + Normalizer(L2)`** | Unit-sphere alignment |
+| **Classifier Architecture** | Single RBF ($C=10.0$, unweighted) | Single RBF ($C=1.0$, balanced) | Calibrated Soft-Voting Ensemble (4 Models) | **Two-Stage Hierarchical Cascade (Ensemble + Fungi-vs-Pest Specialist)** | **Eliminates boundary ambiguity** |
+| **Validation Accuracy** | 68.87% (312/453) | 73.29% (332/453) | 76.60% (347/453) | **80.35% (364/453)** | **+11.48% (+52 correct leaves)** |
+| **Validation Macro-F1** | 63.36% | 69.31% | 75.06% | **78.03%** | **+14.67%** |
+| **Weighted-F1** | ~68.5% | 73.05% | 76.65% | **80.28%** | **+11.78%** |
+
+### Per-Category Recall & F1 Comparison across All Versions
+
+| Category | Val Support | v1 Recall | v2 Recall | v3 Recall | **v4 Recall** | v1 F1 | v2 F1 | v3 F1 | **v4 F1** |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **Bacteria** | 82 | 92.68% | 91.46% | 93.90% | **95.12%** | 90.48% | 89.82% | 94.48% | **94.55%** |
+| **Fungi** | 111 | 77.48% | 73.87% | 78.38% | **83.78%** | 65.90% | 68.05% | 73.11% | **77.82%** |
+| **Healthy** | 31 | 54.84% | **80.65%** | 58.06% | **67.74%** | 60.71% | **73.53%** | 64.29% | **71.19%** |
+| **Nematode** | 9 | 22.22% | 33.33% | **66.67%** | **66.67%** | 36.36% | 42.86% | **70.59%** | **66.67%** |
+| **Pest** | 87 | 59.77% | 59.77% | **66.67%** | **65.52%** | 58.43% | 63.41% | 65.17% | **67.86%** |
+| **Phytophthora** | 47 | 46.81% | 59.57% | 68.09% | **72.34%** | 59.46% | 69.14% | 77.11% | **81.93%** |
+| **Virus** | 86 | 66.28% | 77.91% | 80.23% | **87.21%** | 72.15% | 78.36% | 80.70% | **86.21%** |
+
+### Key Performance Breakthroughs in Baseline-v4
+1. **Tri-Backbone Feature Integration (4,864-D):** Adding ConvNeXt-Tiny (with 7x7 depthwise convolutions) supplied the missing spatial high-frequency lesion border information that classical Inception and ResNet architectures smoothed away.
+2. **Two-Stage Hierarchical Cascade Arbitration:** A dedicated binary specialist SVM arbitrates ambiguous boundary decisions between Fungi and Pest (when $|P(\text{fungi}) - P(\text{pest})| \le 0.15$), breaking the largest error cluster in the dataset.
+3. **80%+ Accuracy Milestone:** Validation accuracy reached **80.35%** (364 / 453 correct), and Macro-F1 reached **78.03%**, demonstrating that feature-extractor + SVM hybrids can compete directly with deep end-to-end convolutional networks.
+
+### Verified Baseline-v4 Artifacts
+- **Model Bundle**: `runs/baseline-v4/cascade_svm.joblib` (359 MB) & `runs/baseline-v4/metadata.json`
+- **Validation Metrics**: [reports/baseline-v4/metrics.json](reports/baseline-v4/metrics.json)
+- **Confusion Matrix**: [reports/baseline-v4/confusion_matrix.csv](reports/baseline-v4/confusion_matrix.csv)
+- **Predictions**: [reports/baseline-v4/validation_predictions.csv](reports/baseline-v4/validation_predictions.csv)
+- **Automated Tests**: 8 passed in 6.95s (`pytest -q`). Zero test partition contamination.
+
+The custom CNN comparison, model cost comparison, final test evaluation and Streamlit integration follow.

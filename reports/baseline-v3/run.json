@@ -1,0 +1,25 @@
+{
+  "schema_version": 3,
+  "model": "max_optimized_dual_backbone_svm_ensemble",
+  "backbones": [
+    "InceptionV3",
+    "ResNet50"
+  ],
+  "feature_dimensions": 4096,
+  "validation_accuracy": 0.7660044150110376,
+  "validation_macro_f1": 0.7506292119020289,
+  "accuracy_gain_over_v1": 0.07726269315673295,
+  "macro_f1_gain_over_v1": 0.11706804021396233,
+  "training_images": 2112,
+  "validation_images": 453,
+  "class_order": [
+    "bacteria",
+    "fungi",
+    "healthy",
+    "nematode",
+    "pest",
+    "phytophthora",
+    "virus"
+  ],
+  "generated_at_utc": "2026-11-24T14:20:28.699843+00:00"
+}

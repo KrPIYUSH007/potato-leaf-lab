@@ -1,0 +1,152 @@
+{
+  "partition": "val",
+  "images": 453,
+  "class_order": [
+    "bacteria",
+    "fungi",
+    "healthy",
+    "nematode",
+    "pest",
+    "phytophthora",
+    "virus"
+  ],
+  "accuracy": 0.8035320088300221,
+  "macro_f1": 0.7803065427496493,
+  "baseline_v1_accuracy": 0.6887417218543046,
+  "baseline_v1_macro_f1": 0.6335611716880666,
+  "baseline_v2_accuracy": 0.7328918322295805,
+  "baseline_v2_macro_f1": 0.693099594498998,
+  "baseline_v3_accuracy": 0.7660044150110376,
+  "baseline_v3_macro_f1": 0.7506292119020289,
+  "accuracy_gain_over_v1": 0.11479028697571747,
+  "macro_f1_gain_over_v1": 0.1467453710615827,
+  "accuracy_gain_over_v3": 0.03752759381898452,
+  "macro_f1_gain_over_v3": 0.029677330847620365,
+  "classification_report": {
+    "bacteria": {
+      "precision": 0.9397590361445783,
+      "recall": 0.9512195121951219,
+      "f1-score": 0.9454545454545454,
+      "support": 82.0
+    },
+    "fungi": {
+      "precision": 0.7265625,
+      "recall": 0.8378378378378378,
+      "f1-score": 0.7782426778242678,
+      "support": 111.0
+    },
+    "healthy": {
+      "precision": 0.75,
+      "recall": 0.6774193548387096,
+      "f1-score": 0.711864406779661,
+      "support": 31.0
+    },
+    "nematode": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.6666666666666666,
+      "support": 9.0
+    },
+    "pest": {
+      "precision": 0.7037037037037037,
+      "recall": 0.6551724137931034,
+      "f1-score": 0.6785714285714286,
+      "support": 87.0
+    },
+    "phytophthora": {
+      "precision": 0.9444444444444444,
+      "recall": 0.723404255319149,
+      "f1-score": 0.8192771084337349,
+      "support": 47.0
+    },
+    "virus": {
+      "precision": 0.8522727272727273,
+      "recall": 0.872093023255814,
+      "f1-score": 0.8620689655172413,
+      "support": 86.0
+    },
+    "accuracy": 0.8035320088300221,
+    "macro avg": {
+      "precision": 0.7976298683188744,
+      "recall": 0.7691161519866289,
+      "f1-score": 0.7803065427496493,
+      "support": 453.0
+    },
+    "weighted avg": {
+      "precision": 0.8076495455196934,
+      "recall": 0.8035320088300221,
+      "f1-score": 0.802780741705339,
+      "support": 453.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      78,
+      1,
+      0,
+      0,
+      1,
+      0,
+      2
+    ],
+    [
+      0,
+      93,
+      0,
+      0,
+      14,
+      0,
+      4
+    ],
+    [
+      0,
+      0,
+      21,
+      0,
+      5,
+      0,
+      5
+    ],
+    [
+      1,
+      2,
+      0,
+      6,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      19,
+      4,
+      2,
+      57,
+      2,
+      2
+    ],
+    [
+      1,
+      10,
+      0,
+      1,
+      1,
+      34,
+      0
+    ],
+    [
+      2,
+      3,
+      3,
+      0,
+      3,
+      0,
+      75
+    ]
+  ],
+  "model_architecture": "Tri-Backbone (InceptionV3 + ResNet-50 + ConvNeXt-Tiny TTA) with Two-Stage Hierarchical Cascade",
+  "arbitration_thresholds": {
+    "t_fp": 0.15,
+    "t_pf": 0.0
+  }
+}

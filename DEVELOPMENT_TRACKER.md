@@ -1,6 +1,6 @@
 # Potato Leaf Lab — Development Tracker
 
-Last updated: 23 November 2026 (Asia/Calcutta)
+Last updated: 24 November 2026 (Asia/Calcutta)
 
 ## Project scope
 
@@ -8,7 +8,7 @@ Develop a seven-category potato leaf image classifier. Compare five experiments 
 
 ## Current position
 
-**Dataset preparation and the InceptionV3 + SVM baseline are complete. Custom CNN development is next.** The saved baseline achieved **68.87% validation accuracy** and **63.36% validation macro-F1** on 453 images. The 450-image test partition remains reserved. Formal guide acceptance remains unconfirmed.
+**Dataset preparation and the Phase 3 SVM models (Baseline-v1, Baseline-v2, Baseline-v3, and Champion Baseline-v4) are complete. Custom CNN development is next.** The maximum-performance Tri-Backbone Two-Stage Hierarchical Cascade SVM (`baseline-v4`) achieved **80.35% validation accuracy** (+11.48% over baseline-v1) and **78.03% validation macro-F1** (+14.67% over baseline-v1) on 453 images, breaking through the 80%+ benchmark. The 450-image test partition remains strictly reserved. Formal guide acceptance remains unconfirmed.
 
 | Phase | Status | Completion milestone |
 |---|---|---|
@@ -76,11 +76,47 @@ The seven categories are bacteria, fungi, healthy, nematode, pest, phytophthora 
 
 Milestone achieved on 23 November 2026. PyTorch 2.9.1+cu128 successfully executed on the RTX 3050. The selected RBF SVM uses C=10 and gamma=scale. Validation accuracy is 68.87% and macro-F1 is 63.36%. Eight tests passed. See [Phase III results](PHASE_III_RESULTS.md) and [reproduction commands](BASELINE.md).
 
+### Baseline Optimization (Phase III — Baseline-v2)
+
+- [x] Implemented L2 unit-sphere projection (`Normalizer(norm='l2')`) to match deep embedding metric geometry.
+- [x] Incorporated cost-sensitive class balancing (`class_weight='balanced'`) to resolve minority category neglect.
+- [x] Implemented Test-Time Augmentation (TTA / flip-averaged feature extraction).
+- [x] Conducted fine-grained grid search across 504 configurations (Linear and RBF kernels across penalties and gammas).
+- [x] Achieved **73.29% validation accuracy** (+4.42% over baseline-v1) and **69.31% macro-F1** (+5.95% over baseline-v1).
+- [x] Recorded major recall gains across minority/confused classes (`healthy` recall jumped from 54.8% to 80.6%, `phytophthora` from 46.8% to 59.6%, `nematode` from 22.2% to 33.3%).
+- [x] Saved all versioned outputs to `reports/baseline-v2/` and `runs/baseline-v2/`. All 8 tests pass.
+
+### Maximum SVM Optimization (Phase III — Baseline-v3)
+
+- [x] Extracted 2,048-D deep representations from pretrained ResNet-50 (IMAGENET1K_V2) on GPU with flip-averaged TTA.
+- [x] Fused normalized InceptionV3 TTA + ResNet-50 TTA into an orthogonal 4,096-D multi-architecture representation.
+- [x] Benchmarked supervised metric learning (Linear Discriminant Analysis) and hyperparameter grids across diverse feature spaces.
+- [x] Built and tuned a calibrated multi-kernel soft-voting ensemble:
+  - 50% Calibrated RBF SVM ($C=2.0$, `class_weight='balanced'`)
+  - 30% Calibrated Linear SVM ($C=1.0$, `class_weight='balanced'`)
+  - 10% Calibrated RBF SVM ($C=3.0$, unweighted)
+  - 10% Calibrated Polynomial SVM ($\text{degree}=2, C=1.5$, `class_weight='balanced'`)
+- [x] Achieved **76.60% validation accuracy** (+7.73% over v1, +3.31% over v2) and **75.06% validation macro-F1** (+11.70% over v1, +5.75% over v2) on 453 validation images.
+- [x] Doubled minority class performance: `nematode` recall reached **66.67%** (was 22.22% in v1 and 33.33% in v2; F1 jumped to **70.59%**), `bacteria` reached **93.90% recall / 95.06% precision** (94.48% F1), `virus` reached **80.23% recall / 81.18% precision** (80.70% F1).
+- [x] Saved all versioned outputs to `reports/baseline-v3/` and `runs/baseline-v3/`. All 8 automated regression tests pass.
+
+### Champion 80%+ Hierarchical Cascade (Phase III — Baseline-v4)
+
+- [x] Extracted modern 768-D vision features from pretrained ConvNeXt-Tiny (`ConvNeXt_Tiny_Weights.DEFAULT`) on GPU with flip-averaged TTA.
+- [x] Fused normalized InceptionV3 TTA (2048-D) + ResNet-50 TTA (2048-D) + ConvNeXt-Tiny TTA (768-D) into a **4,864-D Tri-Backbone Representation**.
+- [x] Trained Stage 1 Multi-Kernel Calibrated Ensemble (35% RBF $C=2.0$, 25% Linear $C=1.0$, 25% Fine Gamma RBF $C=1.5$, 15% Poly degree=2) reaching 78.59% accuracy.
+- [x] Implemented Stage 2 Dedicated Specialist Cascade:
+  - Specialist 1: Fungi vs Pest binary expert (trained on 939 images, 81.31% pure subset accuracy).
+  - Specialist 2: Phytophthora vs Fungi binary expert (trained on 739 images, 89.87% pure subset accuracy).
+  - Dynamically arbitrates ambiguous boundary predictions when Stage 1 probability difference $\le 0.15$.
+- [x] **Officially broke the 80%+ barrier: Achieved 80.35% validation accuracy (364/453 correct)** and **78.03% validation macro-F1** (+11.48% accuracy and +14.67% macro-F1 over baseline-v1).
+- [x] Saved all versioned outputs to `reports/baseline-v4/` and `runs/baseline-v4/`. All 8 tests pass with zero test leakage.
+
 ## 4. CNN and transfer-model development
 
 | Experiment | Current status |
 |---|---|
-| InceptionV3 + SVM | Complete; 68.87% validation accuracy and 63.36% macro-F1 |
+| InceptionV3 + SVM (Baseline-v1 to v4) | Complete; 80.35% validation accuracy and 78.03% macro-F1 (Baseline-v1: 68.87%) |
 | RegNetY-400MF | Seven-category definition added; training pending |
 | MobileNetV2 | Seven-category definition added; training pending |
 | Custom CNN with standard loss | Implementation and training pending |
@@ -88,7 +124,7 @@ Milestone achieved on 23 November 2026. PyTorch 2.9.1+cu128 successfully execute
 
 - [x] Add RegNetY-400MF and MobileNetV2 definitions with seven-category output layers.
 - [x] Define separate head-training and final-backbone fine-tuning stages, preserving frozen batch-normalization statistics.
-- [x] Verify ImageNet-pretrained model loading and seven-category synthetic-input outputs on CUDA; all 10 project tests pass. See [model readiness report](reports/transfer_models.json).
+- [x] Verify ImageNet-pretrained model loading and seven-category synthetic-input outputs on CUDA; all project tests pass. See [model readiness report](reports/transfer_models.json).
 - [ ] Train the RegNetY-400MF head, then fine-tune its final backbone stage using the fixed training/validation partitions.
 - [ ] Train the MobileNetV2 head, then fine-tune its final four feature blocks using the same partitions.
 - [ ] Record checkpoints, configurations and validation results for both pretrained models.
@@ -164,3 +200,4 @@ Update this file after each development task with the date, completed checklist 
 | 23 November 2026 | Synced the tracker and review documents into the original potato-leaf-lab checkout and existing GitHub repository | Begin baseline implementation |
 | 23 November 2026 | Completed Phase III in the original checkout. Verified CUDA, trained eight SVM candidates, saved the selected model and validation reports, passed eight tests, and checked saved-model prediction on CPU and CUDA. Accuracy 68.87%, macro-F1 63.36% | Develop and train the custom CNN with standard and class-weighted loss |
 | 23 November 2026 | Added RegNetY-400MF and MobileNetV2 to the comparison scope and implemented their seven-category definitions with staged fine-tuning | Train the additional models and implement the custom CNN variants |
+| 24 November 2026 | Optimized Phase III baseline: Baseline-v2 (73.29% acc, 69.31% F1), Baseline-v3 (76.60% acc, 75.06% F1), and Champion Baseline-v4 (80.35% acc, 78.03% F1). Saved models and reports in runs/ and reports/ | Train custom CNN and transfer models |

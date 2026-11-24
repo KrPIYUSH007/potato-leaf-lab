@@ -1,0 +1,170 @@
+{
+  "partition": "val",
+  "images": 453,
+  "class_order": [
+    "bacteria",
+    "fungi",
+    "healthy",
+    "nematode",
+    "pest",
+    "phytophthora",
+    "virus"
+  ],
+  "accuracy": 0.7660044150110376,
+  "macro_f1": 0.7506292119020289,
+  "baseline_v1_accuracy": 0.6887417218543046,
+  "baseline_v1_macro_f1": 0.6335611716880666,
+  "baseline_v2_accuracy": 0.7328918322295805,
+  "baseline_v2_macro_f1": 0.693099594498998,
+  "accuracy_gain_over_v1": 0.07726269315673295,
+  "macro_f1_gain_over_v1": 0.11706804021396233,
+  "accuracy_gain_over_v2": 0.03311258278145701,
+  "macro_f1_gain_over_v2": 0.057529617403030864,
+  "classification_report": {
+    "bacteria": {
+      "precision": 0.9506172839506173,
+      "recall": 0.9390243902439024,
+      "f1-score": 0.9447852760736196,
+      "support": 82.0
+    },
+    "fungi": {
+      "precision": 0.6850393700787402,
+      "recall": 0.7837837837837838,
+      "f1-score": 0.7310924369747899,
+      "support": 111.0
+    },
+    "healthy": {
+      "precision": 0.72,
+      "recall": 0.5806451612903226,
+      "f1-score": 0.6428571428571429,
+      "support": 31.0
+    },
+    "nematode": {
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.7058823529411765,
+      "support": 9.0
+    },
+    "pest": {
+      "precision": 0.6373626373626373,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.651685393258427,
+      "support": 87.0
+    },
+    "phytophthora": {
+      "precision": 0.8888888888888888,
+      "recall": 0.6808510638297872,
+      "f1-score": 0.7710843373493976,
+      "support": 47.0
+    },
+    "virus": {
+      "precision": 0.8117647058823529,
+      "recall": 0.8023255813953488,
+      "f1-score": 0.8070175438596491,
+      "support": 86.0
+    },
+    "accuracy": 0.7660044150110376,
+    "macro avg": {
+      "precision": 0.7776675551661766,
+      "recall": 0.7314233305537824,
+      "f1-score": 0.7506292119020289,
+      "support": 453.0
+    },
+    "weighted avg": {
+      "precision": 0.7728478571675504,
+      "recall": 0.7660044150110376,
+      "f1-score": 0.7665480520708944,
+      "support": 453.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      77,
+      3,
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      87,
+      1,
+      0,
+      17,
+      0,
+      6
+    ],
+    [
+      0,
+      1,
+      18,
+      0,
+      7,
+      0,
+      5
+    ],
+    [
+      1,
+      1,
+      0,
+      6,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      17,
+      2,
+      2,
+      58,
+      3,
+      4
+    ],
+    [
+      0,
+      12,
+      0,
+      0,
+      3,
+      32,
+      0
+    ],
+    [
+      2,
+      6,
+      4,
+      0,
+      4,
+      1,
+      69
+    ]
+  ],
+  "model_architecture": "Dual-Backbone (InceptionV3 + ResNet-50 TTA) with Calibrated Soft-Voting SVM Ensemble",
+  "ensemble_weights": [
+    0.5,
+    0.3,
+    0.1,
+    0.1
+  ],
+  "ensemble_members": [
+    {
+      "model": "RBF SVM C=2.0 balanced",
+      "weight": 0.5
+    },
+    {
+      "model": "Linear SVM C=1.0 balanced",
+      "weight": 0.3
+    },
+    {
+      "model": "RBF SVM C=3.0 unweighted",
+      "weight": 0.1
+    },
+    {
+      "model": "Poly SVM degree=2 C=1.5 balanced",
+      "weight": 0.1
+    }
+  ]
+}
