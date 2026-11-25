@@ -1,6 +1,6 @@
 # Potato Leaf Lab — Development Tracker
 
-Last updated: 24 November 2026 (Asia/Calcutta)
+Last updated: 25 November 2026 (Asia/Calcutta)
 
 ## Project scope
 
@@ -112,6 +112,22 @@ Milestone achieved on 23 November 2026. PyTorch 2.9.1+cu128 successfully execute
 - [x] **Officially broke the 80%+ barrier: Achieved 80.35% validation accuracy (364/453 correct)** and **78.03% validation macro-F1** (+11.48% accuracy and +14.67% macro-F1 over baseline-v1).
 - [x] Saved all versioned outputs to `reports/baseline-v4/` and `runs/baseline-v4/`. All 8 tests pass with zero test leakage.
 
+### Incoming optimization review — 25 November 2026
+
+Reviewed and pulled commits `a011c6a` and `25d891c` into the original checkout. The experimental scripts, saved validation predictions and review PDFs are useful additions. Verification covered the following points.
+
+- Recomputed accuracy, macro-F1, per-category metrics and confusion matrices from all three submitted prediction files. They match the recorded v2, v3 and v4 metrics, including 364/453 correct predictions for v4, or 80.35% accuracy and 78.03% macro-F1.
+- All submitted paths and true labels match the unchanged 453-image validation partition exactly. The shown experiment scripts fit on training rows and tune on validation rows. This review did not independently reproduce model training or establish the provenance of their feature arrays.
+- All 10 existing tests passed against the incoming revision in an isolated snapshot. Those tests cover the existing baseline, data preparation and transfer definitions. Dedicated coverage of the new fusion/cascade scripts remains pending.
+
+Remaining integration and verification work
+
+- [ ] Obtain or regenerate the optimized model bundles and required feature arrays. Git did not supply `runs/baseline-v2`, `runs/baseline-v3` or `runs/baseline-v4`. The experimental scripts depend on named `.npy` caches, while this checkout currently has the original keyed `.npz` baseline caches. The tracked code does not provide the initial InceptionV3 TTA cache-generation step used by these scripts.
+- [ ] Add manifest, image-order, weight-preset and preprocessing checks to the exploratory cache workflow before reusing arrays. Importing `validate_manifest` in a script does not execute validation.
+- [ ] Add saved-model image prediction and reproduction checks for v2–v4. The existing `leaflab predict` command supports the original schema-v1 model bundle.
+- [ ] Treat the new scores as validation-tuned experimental results until final evaluation. Hundreds of candidate settings, ensemble weights and specialist thresholds were selected on the same validation partition. The v4 threshold sweep prioritizes accuracy, whereas the original comparison plan prioritizes macro-F1.
+- [ ] Review presentation explanations against measured evidence. The reported score gain does not establish a specific lesion-feature mechanism or complete independence of every plant/session. Source image decoding found zero corrupt images in the Phase II audit.
+
 ## 4. CNN and transfer-model development
 
 | Experiment | Current status |
@@ -201,3 +217,4 @@ Update this file after each development task with the date, completed checklist 
 | 23 November 2026 | Completed Phase III in the original checkout. Verified CUDA, trained eight SVM candidates, saved the selected model and validation reports, passed eight tests, and checked saved-model prediction on CPU and CUDA. Accuracy 68.87%, macro-F1 63.36% | Develop and train the custom CNN with standard and class-weighted loss |
 | 23 November 2026 | Added RegNetY-400MF and MobileNetV2 to the comparison scope and implemented their seven-category definitions with staged fine-tuning | Train the additional models and implement the custom CNN variants |
 | 24 November 2026 | Optimized Phase III baseline: Baseline-v2 (73.29% acc, 69.31% F1), Baseline-v3 (76.60% acc, 75.06% F1), and Champion Baseline-v4 (80.35% acc, 78.03% F1). Saved models and reports in runs/ and reports/ | Train custom CNN and transfer models |
+| 25 November 2026 | Reviewed and pulled teammates' optimization scripts, reports and PDFs. Recomputed v2–v4 metrics from submitted validation predictions and passed all 10 existing tests against the incoming revision. Recorded missing artifacts, cache provenance and inference/reproduction gaps | Obtain or regenerate optimized artifacts, reproduce image prediction and continue neural-network experiments |
