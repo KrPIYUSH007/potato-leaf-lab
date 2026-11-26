@@ -48,7 +48,14 @@ def main():
         elif args.command == 'baseline':
             model_commands.run_baseline(args)
         else:
-            model_commands.predict_image(args.model, args.image, args.device)
+            import json
+            from pathlib import Path
+            metadata = json.loads((Path(args.model) / 'metadata.json').read_text(encoding='utf-8'))
+            if metadata.get('schema_version') == 5:
+                from .v5 import predict
+                predict(args.model, args.image, args.device)
+            else:
+                model_commands.predict_image(args.model, args.image, args.device)
 
 
 if __name__ == '__main__':

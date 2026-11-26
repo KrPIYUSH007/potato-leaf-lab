@@ -1,14 +1,16 @@
 # Potato Leaf Lab
 
-Custom CNN, RegNetY-400MF, MobileNetV2 and InceptionV3 + SVM experiments for seven-category potato leaf classification.
+Custom CNN, RegNetY-400MF, MobileNetV2 and frozen-feature SVM experiments for seven-category potato leaf classification.
 
 ## Current status---
 
-Research, dataset preparation, and both initial, optimized, and maximum-performance InceptionV3 + SVM baselines are complete.
-The original baseline achieved **68.87% validation accuracy** and **63.36% validation macro-F1**. The optimized `baseline-v2` reached **73.29% validation accuracy** and **69.31% macro-F1**. The dual-backbone `baseline-v3` reached **76.60% validation accuracy** and **75.06% macro-F1**. The champion `baseline-v4` (Tri-Backbone InceptionV3 + ResNet-50 + ConvNeXt-Tiny with a Two-Stage Hierarchical Cascade) broke through the 80%+ barrier, reaching **80.35% validation accuracy** (+11.48% over v1) and **78.03% validation macro-F1** (+14.67% over v1) on 453 images. The 450-image test partition remains strictly reserved for final evaluation. Custom CNN training is next.
+**Latest locally verified result, v5:** ConvNeXt-Tiny features + RBF SVM achieved **82.12% validation accuracy** and **80.04% macro-F1**, or 372/453 correct predictions. The saved model supports CPU/CUDA image prediction. See [V5 results and commands](V5.md). The test partition remains reserved.
+
+Research and dataset preparation are complete. Earlier validation results were 68.87% accuracy / 63.36% macro-F1 for the locally trained v1 baseline, 73.29% / 69.31% for teammates' v2, 76.60% / 75.06% for v3, and 80.35% / 78.03% for v4. Teammates' metrics were verified against their submitted prediction files; reproducing their complete runs remains pending. Custom CNN and transfer-model training are next.
 
 - [Development tracker](DEVELOPMENT_TRACKER.md) covers milestones, completed work and pending tasks.
 - [Baseline results](PHASE_III_RESULTS.md) records the actual validation metrics, environment and remaining work.
+- [V5 experiment](V5.md) records the latest locally trained model, feature-fusion comparison and deployment bundle.
 - [Baseline setup and commands](BASELINE.md) explains training, saved models and image prediction.
 - [Latest Review 1 presentation](docs/presentations/Plant_Leaf_Review1_Literature_Updated.pptx).
 - [Research review document](docs/research/Potato_Leaf_Project_Research_Review.docx).

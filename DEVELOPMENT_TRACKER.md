@@ -1,6 +1,6 @@
 # Potato Leaf Lab — Development Tracker
 
-Last updated: 25 November 2026 (Asia/Calcutta)
+Last updated: 26 November 2026 (Asia/Calcutta)
 
 ## Project scope
 
@@ -8,7 +8,7 @@ Develop a seven-category potato leaf image classifier. Compare five experiments 
 
 ## Current position
 
-**Dataset preparation and the Phase 3 SVM models (Baseline-v1, Baseline-v2, Baseline-v3, and Champion Baseline-v4) are complete. Custom CNN development is next.** The maximum-performance Tri-Backbone Two-Stage Hierarchical Cascade SVM (`baseline-v4`) achieved **80.35% validation accuracy** (+11.48% over baseline-v1) and **78.03% validation macro-F1** (+14.67% over baseline-v1) on 453 images, breaking through the 80%+ benchmark. The 450-image test partition remains strictly reserved. Formal guide acceptance remains unconfirmed.
+**Dataset preparation and the locally trained v5 SVM experiment are complete. Custom CNN and transfer-model training remain pending.** V5 selected ConvNeXt-Tiny features with an RBF SVM and achieved **82.12% validation accuracy** and **80.04% macro-F1**, with 372/453 correct predictions. The saved v5 bundle passed CPU/CUDA image-prediction checks. V4's submitted validation predictions recorded 80.35% accuracy and 78.03% macro-F1. The 450-image test partition remains reserved. Formal guide acceptance remains unconfirmed.
 
 | Phase | Status | Completion milestone |
 |---|---|---|
@@ -128,11 +128,23 @@ Remaining integration and verification work
 - [ ] Treat the new scores as validation-tuned experimental results until final evaluation. Hundreds of candidate settings, ensemble weights and specialist thresholds were selected on the same validation partition. The v4 threshold sweep prioritizes accuracy, whereas the original comparison plan prioritizes macro-F1.
 - [ ] Review presentation explanations against measured evidence. The reported score gain does not establish a specific lesion-feature mechanism or complete independence of every plant/session. Source image decoding found zero corrupt images in the Phase II audit.
 
+### V5 development — 26 November 2026
+
+- [x] Implement the versioned v5 experiment and saved-model image-prediction route in the original checkout.
+- [x] Add EfficientNet-B0 alongside InceptionV3, ResNet-50 and ConvNeXt-Tiny, using frozen features and original/mirrored image averaging.
+- [x] Add manifest/image-order-aware caches, training-group-disjoint calibration folds and train-fold-fitted preprocessing.
+- [x] Pass all 13 tests, including group-fold isolation, specialist priority and cache identity regression checks.
+- [x] Complete the declared validation search and record measured metrics across 31 scored candidates.
+- [x] Verify saved-bundle prediction against a recorded validation prediction on CPU and CUDA.
+- [x] Publish v5 code, reports and the final tracker update to the existing GitHub repository.
+
+The selected pipeline uses ConvNeXt-Tiny, StandardScaler, L2 normalization and an unweighted RBF SVM with C=2 and gamma=scale. Accuracy is 82.12% and macro-F1 is 80.04%, adding eight correct validation predictions relative to v4's submitted results. The deployment bundle is approximately 112 MiB. Protocol, full results and commands are documented in [V5.md](V5.md). The 450-image test partition remains reserved.
+
 ## 4. CNN and transfer-model development
 
 | Experiment | Current status |
 |---|---|
-| InceptionV3 + SVM (Baseline-v1 to v4) | Complete; 80.35% validation accuracy and 78.03% macro-F1 (Baseline-v1: 68.87%) |
+| SVM experiments (v1 to v5) | V5 locally trained and verified; 82.12% validation accuracy and 80.04% macro-F1 |
 | RegNetY-400MF | Seven-category definition added; training pending |
 | MobileNetV2 | Seven-category definition added; training pending |
 | Custom CNN with standard loss | Implementation and training pending |
@@ -195,6 +207,7 @@ The original project folder is `C:/Users/Lenovo/.codex/visualizations/2026/10/26
 - [Phase I scope document](PHASE_I_RESEARCH_AND_SCOPE.md)
 - [Phase II results](PHASE_II_RESULTS.md)
 - [Phase III baseline results](PHASE_III_RESULTS.md)
+- [V5 results and reproduction](V5.md)
 - [Baseline reproduction and image prediction](BASELINE.md)
 - [Dataset preparation and reproduction](DATASET.md)
 - [Fixed dataset manifest](reports/data-v1/manifest.csv)
@@ -218,3 +231,4 @@ Update this file after each development task with the date, completed checklist 
 | 23 November 2026 | Added RegNetY-400MF and MobileNetV2 to the comparison scope and implemented their seven-category definitions with staged fine-tuning | Train the additional models and implement the custom CNN variants |
 | 24 November 2026 | Optimized Phase III baseline: Baseline-v2 (73.29% acc, 69.31% F1), Baseline-v3 (76.60% acc, 75.06% F1), and Champion Baseline-v4 (80.35% acc, 78.03% F1). Saved models and reports in runs/ and reports/ | Train custom CNN and transfer models |
 | 25 November 2026 | Reviewed and pulled teammates' optimization scripts, reports and PDFs. Recomputed v2–v4 metrics from submitted validation predictions and passed all 10 existing tests against the incoming revision. Recorded missing artifacts, cache provenance and inference/reproduction gaps | Obtain or regenerate optimized artifacts, reproduce image prediction and continue neural-network experiments |
+| 26 November 2026 | Implemented and trained v5 in the original checkout. Compared 31 candidates, selected ConvNeXt-Tiny + RBF SVM, measured 82.12% validation accuracy and 80.04% macro-F1, verified CPU/CUDA saved-image prediction and passed 13 tests | Train the custom CNN and planned transfer models, then compare deployment costs before final testing |

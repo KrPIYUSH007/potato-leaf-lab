@@ -1,0 +1,339 @@
+[
+  {
+    "kind": "single",
+    "representation": "convnext",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 0.5,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.7359258182066712,
+    "accuracy": 0.7858719646799117
+  },
+  {
+    "kind": "single",
+    "representation": "convnext",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 0.5,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7987059115819883,
+    "accuracy": 0.8057395143487859
+  },
+  {
+    "kind": "single",
+    "representation": "convnext",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 2.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.8004307139242928,
+    "accuracy": 0.8211920529801324
+  },
+  {
+    "kind": "single",
+    "representation": "convnext",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 2.0,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7993985225620246,
+    "accuracy": 0.8167770419426048
+  },
+  {
+    "kind": "single",
+    "representation": "convnext",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 8.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.7941961010733036,
+    "accuracy": 0.8145695364238411
+  },
+  {
+    "kind": "single",
+    "representation": "convnext",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 8.0,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7941961010733036,
+    "accuracy": 0.8145695364238411
+  },
+  {
+    "kind": "single",
+    "representation": "tri",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 0.5,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.6404207438183314,
+    "accuracy": 0.7196467991169978
+  },
+  {
+    "kind": "single",
+    "representation": "tri",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 0.5,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.738097375381178,
+    "accuracy": 0.7417218543046358
+  },
+  {
+    "kind": "single",
+    "representation": "tri",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 2.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.7476211208256015,
+    "accuracy": 0.7880794701986755
+  },
+  {
+    "kind": "single",
+    "representation": "tri",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 2.0,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7665449655210069,
+    "accuracy": 0.7924944812362031
+  },
+  {
+    "kind": "single",
+    "representation": "tri",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 8.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.7456548505400296,
+    "accuracy": 0.7836644591611479
+  },
+  {
+    "kind": "single",
+    "representation": "tri",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 8.0,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7456548505400296,
+    "accuracy": 0.7836644591611479
+  },
+  {
+    "kind": "single",
+    "representation": "quad",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 0.5,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.6627761165400216,
+    "accuracy": 0.7439293598233996
+  },
+  {
+    "kind": "single",
+    "representation": "quad",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 0.5,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7584161020857029,
+    "accuracy": 0.7637969094922737
+  },
+  {
+    "kind": "single",
+    "representation": "quad",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 2.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.757492961251294,
+    "accuracy": 0.7969094922737306
+  },
+  {
+    "kind": "single",
+    "representation": "quad",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 2.0,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7618714365860096,
+    "accuracy": 0.8035320088300221
+  },
+  {
+    "kind": "single",
+    "representation": "quad",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 8.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.7587783270154357,
+    "accuracy": 0.7969094922737306
+  },
+  {
+    "kind": "single",
+    "representation": "quad",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 8.0,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "macro_f1": 0.7587783270154357,
+    "accuracy": 0.7969094922737306
+  },
+  {
+    "kind": "vote",
+    "weights": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "macro_f1": 0.7798349128514576,
+    "accuracy": 0.8057395143487859
+  },
+  {
+    "kind": "vote",
+    "weights": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "macro_f1": 0.7812452502195182,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "vote",
+    "weights": [
+      0.2,
+      0.6,
+      0.2
+    ],
+    "macro_f1": 0.7646595994367045,
+    "accuracy": 0.7969094922737306
+  },
+  {
+    "kind": "vote",
+    "weights": [
+      0.2,
+      0.2,
+      0.6
+    ],
+    "macro_f1": 0.7677240712144212,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.0,
+      0.0
+    ],
+    "macro_f1": 0.7812452502195182,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.0,
+      0.1
+    ],
+    "macro_f1": 0.7812452502195182,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.0,
+      0.2
+    ],
+    "macro_f1": 0.7812452502195182,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.1,
+      0.0
+    ],
+    "macro_f1": 0.7812452502195182,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.1,
+      0.1
+    ],
+    "macro_f1": 0.7812452502195182,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.1,
+      0.2
+    ],
+    "macro_f1": 0.7812452502195182,
+    "accuracy": 0.8013245033112583
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.2,
+      0.0
+    ],
+    "macro_f1": 0.7830270912852235,
+    "accuracy": 0.8035320088300221
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.2,
+      0.1
+    ],
+    "macro_f1": 0.7830270912852235,
+    "accuracy": 0.8035320088300221
+  },
+  {
+    "kind": "cascade",
+    "thresholds": [
+      0.2,
+      0.2
+    ],
+    "macro_f1": 0.7830270912852235,
+    "accuracy": 0.8035320088300221
+  }
+]

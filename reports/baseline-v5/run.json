@@ -1,0 +1,121 @@
+{
+  "schema_version": 5,
+  "created_at_utc": "2026-11-26T06:14:16.564490+00:00",
+  "mode": "single",
+  "class_order": [
+    "bacteria",
+    "fungi",
+    "healthy",
+    "nematode",
+    "pest",
+    "phytophthora",
+    "virus"
+  ],
+  "manifest_sha256": "9dbbe9a5bdcafce0cf9ce7d9ed8467b9fcecb5d3e79543e77c054314415ceb75",
+  "training_images": 2112,
+  "validation_images": 453,
+  "test_images_used": 0,
+  "plan": {
+    "representations": {
+      "convnext": [
+        "convnext"
+      ],
+      "tri": [
+        "inception",
+        "resnet50",
+        "convnext"
+      ],
+      "quad": [
+        "inception",
+        "resnet50",
+        "convnext",
+        "efficientnet"
+      ]
+    },
+    "C": [
+      0.5,
+      2.0,
+      8.0
+    ],
+    "class_weight": [
+      null,
+      "balanced"
+    ],
+    "kernel": "rbf",
+    "gamma": "scale",
+    "vote_weights": [
+      [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      [
+        0.6,
+        0.2,
+        0.2
+      ],
+      [
+        0.2,
+        0.6,
+        0.2
+      ],
+      [
+        0.2,
+        0.2,
+        0.6
+      ]
+    ],
+    "specialist_thresholds": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "selection": "macro_f1_then_accuracy_then_first_candidate",
+    "test_images_used": 0
+  },
+  "environment": {
+    "recorded_at_utc": "2026-11-26T06:14:16.564490+00:00",
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "numpy": "2.5.4",
+      "scikit-learn": "1.9.1",
+      "Pillow": "13.0.0",
+      "joblib": "1.6.0"
+    },
+    "cuda_available": true,
+    "torch_cuda_runtime": "12.8",
+    "cudnn_version": 91002,
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "gpu_memory_bytes": 6441926656,
+    "cuda_matrix_multiply_passed": true
+  },
+  "backbones": {
+    "convnext": {
+      "weights": "ConvNeXt_Tiny_Weights.IMAGENET1K_V1",
+      "transform": "ImageClassification(\n    crop_size=[224]\n    resize_size=[236]\n    mean=[0.485, 0.456, 0.406]\n    std=[0.229, 0.224, 0.225]\n    interpolation=InterpolationMode.BILINEAR\n)"
+    }
+  },
+  "artifact_sha256": {
+    "classifier.joblib": "8a821afbd632dc5ea0829d48ea9ccd40811be46f099348d1e155a6d1b48ee7b9",
+    "convnext.pt": "94be76d71ff32c49a6495606d9b97f7b2bf7515affd9b34f47a4a39afa9bf4dc"
+  },
+  "validation_accuracy": 0.8211920529801324,
+  "validation_macro_f1": 0.8004307139242928,
+  "seed": 42,
+  "tta": "original_and_horizontal_flip_mean",
+  "selected_candidate": {
+    "kind": "single",
+    "representation": "convnext",
+    "parameters": {
+      "kernel": "rbf",
+      "C": 2.0,
+      "gamma": "scale",
+      "class_weight": null
+    },
+    "macro_f1": 0.8004307139242928,
+    "accuracy": 0.8211920529801324
+  }
+}

@@ -1,5 +1,7 @@
 # Phase III — InceptionV3 + SVM baseline results
 
+The latest local experiment is [v5](V5.md), completed on 26 November 2026 with **82.12% validation accuracy** and **80.04% macro-F1**. It selected ConvNeXt-Tiny features + RBF SVM after comparing single and fused representations. The original baseline and teammate optimization history follow.
+
 Completed on 23 November 2026.
 
 ## Outcome
